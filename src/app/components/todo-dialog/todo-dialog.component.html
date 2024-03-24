@@ -1,0 +1,67 @@
+<div class="bg-white h-full w-full flex justify-between rounded-xl px-4 text-sky-950">
+    <div class="flex space-x-3">
+        <fa-icon [icon]="faCheckToSlot" class="mt-4"></fa-icon>
+        <div class="flex flex-col">
+            <p class="font-semibold text-xl mt-4">{{ todo().title }}</p>
+            <p class="text-sm font-light">in list To Do</p>
+            <p class="mt-9 text-sm font-extrabold ml-2">Notifications</p>
+            <button class="ml-2 w-24 h-8 rounded-md flex space-x-3 mt-1 bg-gray-200 items-center hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1 text-sm">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                  <p class="font-semibold text-sm">Watch</p>              
+            </button>
+            <div class="mt-6 w-3/4 flex justify-between">
+                <div class="flex space-x-3">
+                    <fa-icon [icon]="faBars"></fa-icon>
+                    <div class="flex flex-col space-y-3">
+                        <p class="font-semibold">Description</p>
+                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab porro, voluptatem illum doloribus, iste minus consectetur numquam expedita animi consequuntur cupiditate harum neque. Voluptatum labore vitae ea iure? Vel, dolorem.</p>
+                    </div>
+                    <button class="w-14 h-9 shrink-0 rounded-md bg-gray-200 hover:bg-slate-100">
+                        <p class="mx-auto font-semibold text-sm">Edit</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col">
+        <div class="mt-20 w-40">
+            <p class="font-semibold text-xs">Add to card</p>
+            <div class="px-1 w-full mt-2 flex flex-col space-y-2">
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faUser" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Members</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faTag" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Labels</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faSquareCheck" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Checklist</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faClock" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Dates</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faPaperclip" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Attachment</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faOldRepublic" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Cover</p>
+                </button>
+                <button class="w-full h-8 bg-gray-200 rounded-md flex px-2 space-x-3 items-center">
+                    <fa-icon [icon]="faJediOrder" class="mt-1"></fa-icon>
+                    <p class="font-semibold text-sm">Custom fields</p>
+                </button>
+            </div>
+        </div>  
+    </div>
+    <button class="w-12 h-12 shrink-0 rounded-full mt-1 hover:bg-gray-100 outline outline-none" (click)="close()">
+        <fa-icon [icon]="faX"></fa-icon>
+    </button>
+</div>

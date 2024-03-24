@@ -1,20 +1,61 @@
-<section class="w-screen h-screen flex flex-col items-center bg-slate-50">
-    <div>
-        <img src="assets/icons/logo-gradient-blue-trello.svg" width="200" height="200" class="mt-10" >
-    </div>
-    <div class="w-96 h-4/5 bg-white rounded-md shadow-2xl mt-10 flex flex-col items-center">
-        <p class="mt-8 text-slate-600 font-semibold">Sign in to Trello</p>
-        <form class="w-full px-10 focus-within:ring-2 mt-7">
-            <div class="space-y-4">
-                <input class="h-10 w-full border px-3" placeholder="assa" type="text">
+<body class="bg-slate-50">
+    <section class="w-full h-screen flex flex-col items-center">
+        <div class="fixed h-full w-full hidden sm:block">
+            <img src="/assets/images/login-bg-left.svg" class="absolute left-0 bottom-0 w-96 h-96" alt="" srcset="">
+            <img src="/assets/images/login-bg-right.svg" class="absolute right-0 bottom-0 w-96 h-96" alt="" srcset="">
+        </div>
+        <div>
+            <img src="assets/icons/logo-gradient-blue-trello.svg" width="200" height="200" class="mt-10" >
+        </div>
+        <div class="w-96 h-4/5 bg-white rounded-md shadow mt-10">
+            <p class="mt-8 text-slate-600 font-semibold text-center">Log in to Trello</p>
+            <form class="w-full px-10 mt-7">
+                <div class="space-y-5 relative">
+                    <input class="h-10 w-full border px-1 focus:ring-1 focus:border-blue-500 focus:outline-0 text-slate-600 rounded-sm" placeholder="Enter email" type="email">
+                    <button class="w-full h-10 rounded-sm bg-green-500 text-center text-white hover:bg-green-400 focus:ring-2 ring-green-600 outline outline-0 font-light" routerLink="/boards">Continue</button>
+                </div>
+                <p class="text-center mt-3 font-light text-gray-600">or</p>
+                <div class="relative mt-3 space-y-3 w-full">
+                    <button class="w-full h-8 text-gray-600 flex space-x-2 items-center hover:bg-gray-100">
+                        <div class="mx-auto flex space-x-2">
+                            <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png" width="21" height="21" class="ml-3 object-contain" alt="">
+                            <p>Continue with Google</p>
+                        </div>
+                    </button>
+                    <button class="w-full h-8 shadow text-gray-600 flex space-x-2 items-center hover:bg-gray-100">
+                        <div class="mx-auto flex space-x-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQomToXdaITnDNh_gfzvynzTWnrpkleOrZpsdIOTAYPWA&s" width="21" height="21" class="ml-3 object-contain" alt="">
+                            <p>Continue with Microsoft</p>
+                        </div>
+                    </button>
+                    <button class="w-full h-8 shadow text-gray-600 flex space-x-2 items-center hover:bg-gray-100">
+                        <div class="mx-auto flex space-x-2">
+                            <img src="https://e7.pngegg.com/pngimages/255/774/png-clipart-apple-logo-apple-company-leaf.png" width="30" height="30" class="ml-3 object-contain" alt="">
+                            <p>Continue with Apple</p>
+                        </div>
+                    </button>
+                    <button class="w-full h-8 shadow text-gray-600 flex space-x-2 items-center hover:bg-gray-100">
+                        <div class="mx-auto flex space-x-2">
+                            <img src="https://yt3.googleusercontent.com/ytc/AIf8zZQTjGhyv6zCabZQRDnnudwAJ7AoRvnucvEkhi4DSA=s900-c-k-c0x00ffffff-no-rj" width="27" height="27" class="ml-3 object-contain" alt="">
+                            <p>Continue with Slack</p>
+                        </div>
+                    </button>
+                </div>
+                <hr class="mt-9  border border-gray-500">
+            </form>
+            <div class="flex px-10 justify-center space-x-4 mt-4 relative">
+                <a href="" class="text-sm text-blue-600 cursor-pointer hover:underline">Can't log in?</a>
+                <a href="" class="text-sm text-blue-600 cursor-pointer hover:underline">Sign up for an account</a>
             </div>
-        </form>
-    </div>
-    <div class="absolute h-full w-full">
-        <img src="/assets/images/login-bg-left.svg" class="absolute left-0 bottom-0 w-96 h-96" alt="" srcset="">
-        <img src="/assets/images/login-bg-right.svg" class="absolute right-0 bottom-0 w-96 h-96" alt="" srcset="">
-    </div>
-</section>
-<footer>
-
-</footer>
+        </div>
+    </section>
+    <footer class="w-full h-auto bg-slate-50">
+        <div class="w-96 h-au mt-6 relative mx-auto space-x-4 flex-col justify-center">
+            <div class="flex px-10 justify-center space-x-4 relative items-center">
+                <a href="" class="text-sm text-blue-600 cursor-pointer hover:underline">Privacy Policy</a>
+                <a href="" class="text-sm text-blue-600 cursor-pointer hover:underline">Terms of service</a>
+            </div>
+        </div>
+        <img src="/assets/icons/Atlassian/Atlassian Logo Horizontal/SVG/horizontal-logo-gradient-blue-atlassian.svg" class="w-40 h-20 mx-auto" alt="">
+    </footer>
+</body>

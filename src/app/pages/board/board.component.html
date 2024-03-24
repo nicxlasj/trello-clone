@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="h-screen bg-sky-600 p-6 flex flex-col space-y-4 overflow-x-scroll">
+    <p class="text-3xl text-white font-semibold mb-3 mt-12">Demo Board</p>
+    <div cdkDropListGroup class="flex items-start space-x-5 w-full">
+        @for (column of columns(); track $index) {
+            <div class="w-96 pb-6 rounded-md bg-gray-200 px-3 flex flex-col space-y-4 shrink-0">
+                <div class="flex justify-between">
+                    <p class="font-semibold text-xl ml-3 mt-5">{{ column.title }}</p>
+                    <button cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="openMenu(column)">
+                        <fa-icon [icon]="faElipsis" class="font-bold"></fa-icon>
+                    </button>
+                </div>
+                <div cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.todos" class="flex flex-col space-y-3">
+                    @for (task of column.todos; track $index) {
+                        @if (task.isAdded) {
+                            <div cdkDrag class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100">
+                                <input type="text" class="w-full h-full outline outline-none hover:bg-gray-100 placeholder:text-gray-400" [(ngModel)]="task.title" placeholder="New Task" (click)="openDialog(task)">
+                            </div>
+                        } @else {
+                            <div cdkDrag class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100 cursor-pointer" (click)="openDialog(task)">
+                                <input type="text" class="w-full h-full outline outline-none hover:bg-gray-100" [(ngModel)]="task.title">
+                            </div>
+
+                        }
+                        
+                    }
+                    <button class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100 py-3 flex space-x-2 text-black font-semibold" (click)="addTask(column.todos)">
+                        <fa-icon [icon]="faPlus"></fa-icon>
+                        <p>Add card</p>
+                    </button>
+                </div>
+            </div>
+            <ng-template cdkConnectedOverlay  [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="column.expanded">
+                <div class="bg-white h-96 w-72 rounded-md flex flex-col items-center font-light">
+                    <div class="flex justify-between w-full p-4">
+                        <div></div>
+                        <p class="font-semibold text-sm">List actions</p>
+                        <button class="text-xs" (click)="openMenu(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                              </svg>
+                        </button>
+                    </div>
+                    <div class="w-full h-8 px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <p>Add card</p>
+                    </div>
+                    <div class="w-full h-8 px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <p>Copy list</p>
+                    </div>
+                    <div class="w-full h-8 px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <p>Move list</p>
+                    </div>
+                    <div class="w-full h-8 px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <p>Watch</p>
+                    </div>
+                    
+                </div>
+            </ng-template>
+        }
+        <button class="shrink-0 w-72 h-10 flex rounded-md text-center bg-sky-700 text-white font-semibold py-2 px-3 hover:bg-sky-800" (click)="addCard()">
+            <fa-icon [icon]="faPlus"></fa-icon>
+            <p class="mx-auto">Add another list</p>
+        </button>
+        <div class="text-sky-600">a</div>
+    </div>
+</div>

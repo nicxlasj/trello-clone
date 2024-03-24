@@ -1,0 +1,68 @@
+<nav class="w-full h-14 bg-sky-700 flex justify-between px-6 text-white fixed">
+    <div class="flex space-x-16 items-center">
+        <button routerLink="/boards">
+            <img src="/assets/icons/logo-gradient-white-trello.svg" width="100" height="100" alt="" srcset="">
+        </button>
+        <div class="w-auto h-10 p-2 bg-sky-700 rounded-lg hover:bg-sky-800">
+            <p class="cursor-pointer">Workspaces</p>
+        </div>
+        <div class="w-auto h-10 p-2 bg-sky-700 rounded-lg hover:bg-sky-800">
+            <p class="cursor-pointer">Recent</p>
+        </div>
+        <div class="w-auto h-10 p-2 bg-sky-600 rounded-lg">
+            <p class="cursor-pointer">Create</p>
+        </div>
+    </div>
+    <div class="flex space-x-3 items-center">
+        <input type="text" name="" id="" class="w-72 h-10 outline outline-none text-white bg-sky-800 rounded-md px-3 placeholder:text-white" placeholder="Search">
+        <button>
+            <fa-icon [icon]="faBell"></fa-icon>
+        </button>
+        <button>
+            <fa-icon [icon]="faInfoCircle"></fa-icon>
+        </button>
+        <button class="h-10 w-10" (click)="this.isOpen.set(!this.isOpen())" cdk-overlay-origin #userOverlay = "cdkOverlayOrigin">
+            <img src="https://scontent.fbog4-2.fna.fbcdn.net/v/t39.30808-6/385776921_1938042653262703_3294194997893528915_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH69rkS8VpRmzTYlz4L6rSL7xWe88LZTB3vFZ7zwtlMHcLOw13DF0Ge1kj9HIzRtVJ5bWO8Ae6QopoC5O0EAshb&_nc_ohc=qY_KmknEtaEAX_q8Vjd&_nc_ht=scontent.fbog4-2.fna&oh=00_AfBT-tJENMI_W2IzIYJ-2Up9bZj_MwF81pYAWSMmhMgZwQ&oe=65FA8FF1" class="w-full h-full rounded-full" alt="">
+        </button>
+    </div>
+</nav>
+
+<ng-template cdk-connected-overlay [cdkConnectedOverlayOrigin]="userOverlay" [cdkConnectedOverlayOpen]="isOpen()">
+    <div class="h-96 w-64 shadow rounded-lg mt-2 flex flex-col bg-white">
+        <div class="flex justify-between p-4">
+            <p class="font-light">Account</p>
+            <button (click)="this.isOpen.set(!this.isOpen())">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
+            </button>
+        </div>
+        <hr>
+        <div class="h-20 w-full flex space-x-4 px-4 items-center">
+            <img src="https://scontent.fbog4-2.fna.fbcdn.net/v/t39.30808-6/385776921_1938042653262703_3294194997893528915_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH69rkS8VpRmzTYlz4L6rSL7xWe88LZTB3vFZ7zwtlMHcLOw13DF0Ge1kj9HIzRtVJ5bWO8Ae6QopoC5O0EAshb&_nc_ohc=qY_KmknEtaEAX_q8Vjd&_nc_ht=scontent.fbog4-2.fna&oh=00_AfBT-tJENMI_W2IzIYJ-2Up9bZj_MwF81pYAWSMmhMgZwQ&oe=65FA8FF1" class="w-12 h-12 rounded-full" alt="">
+            <div class="flex flex-col space-y-1 h-full ">
+                <p class="font-light mt-3">Nicolás Jaiquel</p>
+                <p class="font-light text-sm text-gray-500">nicojaiquel&#64;gmail.com</p>
+            </div>  
+        </div>
+        <hr>
+        <div class="w-full h-48">
+            <div class="h-12 w-full flex items-center px-3 cursor-pointer hover:bg-gray-100">
+                <p class="font-light">Profile</p>
+            </div>
+            <div class="h-12 w-full flex items-center px-3 cursor-pointer hover:bg-gray-100">
+                <p class="font-light">Activity</p>
+            </div>
+            <div class="h-12 w-full flex items-center px-3 cursor-pointer hover:bg-gray-100">
+                <p class="font-light">Cards</p>
+            </div>
+            <div class="h-12 w-full flex items-center px-3 cursor-pointer hover:bg-gray-100">
+                <p class="font-light">Settings</p>
+            </div>
+        </div>
+        <hr>
+        <div class="flex items center px-3 h-14 py-4 cursor-pointer">
+            <p class="font-light">Log out</p>
+        </div>
+    </div>
+</ng-template>
