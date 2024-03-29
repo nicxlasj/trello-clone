@@ -14,10 +14,10 @@
                     @for (task of column.todos; track $index) {
                         @if (task.isAdded) {
                             <div cdkDrag class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100">
-                                <input type="text" class="w-full h-full outline outline-none hover:bg-gray-100 placeholder:text-gray-400" [(ngModel)]="task.title" placeholder="New Task" (click)="openDialog(task)">
+                                <input type="text" class="w-full h-full outline outline-none hover:bg-gray-100 placeholder:text-gray-400" [(ngModel)]="task.title" placeholder="New Task" (click)="openDialog(column.title, task)">
                             </div>
                         } @else {
-                            <div cdkDrag class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100 cursor-pointer" (click)="openDialog(task)">
+                            <div cdkDrag class="w-full h-12 shadow px-3 placeholder:text-black  rounded-lg bg-white p-3 hover:bg-gray-100 cursor-pointer" (click)="openDialog(column.title, task)">
                                 <input type="text" class="w-full h-full outline outline-none hover:bg-gray-100" [(ngModel)]="task.title">
                             </div>
 

@@ -106,12 +106,13 @@ export class BoardComponent {
   openMenu(col: Column) {
     col.expanded = !col.expanded;
   }
-  openDialog(todo: ToDo){
+  openDialog(col : string, todo : ToDo){
     this.dialogService.open(TodoDialogComponent, {
       width: '55%',
       height: '80%',
       data: {
-        todo: todo
+        colName : col,
+        todo : todo
       }
     });
   }

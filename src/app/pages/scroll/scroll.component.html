@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="h-screen bg-sky-600 px-4">
+  <div class="flex space-x-4">
+    <div class="w-1/2 mt-32">
+      <p class="font-semibold text-xl text-white">Normal scroll</p>
+      <div
+        class="w-full h-96 mt-4 bg-white overflow-y-scroll flex flex-col space-y-3 p-4 rounded-lg"
+      >
+        @for (item of products(); track $index) {
+        <div
+          class="w-full h-16 bg-gray-200 rounded-lg flex items-center px-2 space-x-3"
+        >
+          <img [src]="item.images[0]" class="w-14 h-14 rounded-full" />
+          <div class="flex flex-col">
+            <p>{{ item.title }}</p>
+            <p class="font-light text-sm">${{ item.price }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="w-1/2 mt-32">
+      <p class="font-semibold text-xl text-white">Virtual scrolling</p>
+      <div class="w-full h-96 mt-4 bg-white rounded-lg p-4">
+        <cdk-virtual-scroll-viewport itemSize="50" class="w-full h-full">
+          <div
+            *cdkVirtualFor="let item of products()"
+            class="w-full h-16 bg-gray-200 rounded-lg flex items-center px-2 space-x-3 mb-3"
+          >
+            <img [src]="item.images[0]" class="w-14 h-14 rounded-full" />
+            <div class="flex flex-col">
+              <p>{{ item.title }}</p>
+              <p class="font-light text-sm">${{ item.price }}</p>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </div>
+    </div>
+  </div>
+</div>

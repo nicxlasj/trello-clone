@@ -2,8 +2,8 @@
     <div class="flex space-x-3">
         <fa-icon [icon]="faCheckToSlot" class="mt-4"></fa-icon>
         <div class="flex flex-col">
-            <p class="font-semibold text-xl mt-4">{{ todo().title }}</p>
-            <p class="text-sm font-light">in list To Do</p>
+            <p class="font-semibold text-xl mt-4">{{ data().todo.title }}</p>
+            <p class="text-sm font-light">In list {{ data().colName }}</p>
             <p class="mt-9 text-sm font-extrabold ml-2">Notifications</p>
             <button class="ml-2 w-24 h-8 rounded-md flex space-x-3 mt-1 bg-gray-200 items-center hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1 text-sm">
@@ -17,7 +17,7 @@
                     <fa-icon [icon]="faBars"></fa-icon>
                     <div class="flex flex-col space-y-3">
                         <p class="font-semibold">Description</p>
-                        <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab porro, voluptatem illum doloribus, iste minus consectetur numquam expedita animi consequuntur cupiditate harum neque. Voluptatum labore vitae ea iure? Vel, dolorem.</p>
+                        <p class="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima praesentium modi tempore commodi. Adipisci id rerum dolores sequi cupiditate accusantium culpa vitae eveniet, repudiandae molestiae? Esse minus hic neque ducimus?</p>
                     </div>
                     <button class="w-14 h-9 shrink-0 rounded-md bg-gray-200 hover:bg-slate-100">
                         <p class="mx-auto font-semibold text-sm">Edit</p>

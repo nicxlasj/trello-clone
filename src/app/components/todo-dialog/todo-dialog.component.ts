@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faX, faCheckToSlot, faXmark, faBars, faUser, faTag, faSquareCheck, faClock, faPaperclip, } from '@fortawesome/free-solid-svg-icons';
 import { faOldRepublic, faJediOrder } from '@fortawesome/free-brands-svg-icons';
 import { ToDo } from '../../models/ToDo';
+import { Data } from '../../models/Data';
 @Component({
   selector: 'app-todo-dialog',
   standalone: true,
@@ -11,11 +12,10 @@ import { ToDo } from '../../models/ToDo';
   templateUrl: './todo-dialog.component.html'
 })
 export class TodoDialogComponent {
-  todo = signal<ToDo>({id : 0, title: ''});
+  data = signal<Data>({colName : '', todo : new ToDo(1, '')});
   dialogService = inject(DialogRef);
-  constructor(@Inject(DIALOG_DATA) data : ToDo){
-    this.todo.set(data);
-    console.log(this.todo());
+  constructor(@Inject(DIALOG_DATA) data : Data){
+    this.data.set(data);
   }
   faX = faX;
   faCheckToSlot = faCheckToSlot;
