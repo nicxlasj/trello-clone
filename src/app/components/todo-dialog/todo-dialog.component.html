@@ -3,7 +3,7 @@
         <fa-icon [icon]="faCheckToSlot" class="mt-4"></fa-icon>
         <div class="flex flex-col">
             <p class="font-semibold text-xl mt-4">{{ data().todo.title }}</p>
-            <p class="text-sm font-light">In list {{ data().colName }}</p>
+            <p class="text-sm font-light">In list <span class="underline cursor-pointer"> {{ data().colName }} </span></p>
             <p class="mt-9 text-sm font-extrabold ml-2">Notifications</p>
             <button class="ml-2 w-24 h-8 rounded-md flex space-x-3 mt-1 bg-gray-200 items-center hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1 text-sm">
