@@ -1,20 +1,17 @@
-<table class="w-full" cdk-table [dataSource]="dataSource">
-    <!-- Position Column -->
+<table class="w-full font-light" cdk-table [dataSource]="products2()">
     <ng-container cdkColumnDef="title">
       <th class="text-left" cdk-header-cell *cdkHeaderCellDef> Title </th>
       <td cdk-cell *cdkCellDef="let element"> {{element.title}} </td>
     </ng-container>
   
-    <!-- Name Column -->
-    <ng-container cdkColumnDef="description">
-      <th class="text-left" cdk-header-cell *cdkHeaderCellDef> Description </th>
-      <td cdk-cell *cdkCellDef="let element"> {{element.description}} </td>
+    <ng-container cdkColumnDef="cover">
+      <th class="text-left" cdk-header-cell *cdkHeaderCellDef> Cover </th>
+      <td cdk-cell *cdkCellDef="let element"> <img [src]="element.images[0]" class="w-32" alt="" srcset=""> </td>
     </ng-container>
   
-    <!-- Weight Column -->
     <ng-container cdkColumnDef="price">
       <th class="text-left" cdk-header-cell *cdkHeaderCellDef> Price </th>
-      <td cdk-cell *cdkCellDef="let element"> {{element.price}} </td>
+      <td cdk-cell *cdkCellDef="let element"> ${{element.price}} </td>
     </ng-container>
   
     <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
